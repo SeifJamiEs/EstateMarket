@@ -5,4 +5,6 @@ import tn.esprit.estatemarket.entities.User;
 
 public interface IService {
     void ajouterUser(User user);
+
+    void modifierUser(User user);
 }
