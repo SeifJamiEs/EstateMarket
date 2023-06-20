@@ -52,4 +52,19 @@ public class RestController {
         iService.addOffer(offer);
     }
 
+    @GetMapping("/getAllOffers")
+    public Set<Offer> getAllOffers() {
+        return iService.getAllOffers();
+    }
+
+    @PostMapping("/deleteOffer/{id}")
+    public void deleteOffer(@PathVariable("id") Long id) {
+        iService.deleteOffer(id);
+    }
+
+    @PostMapping("/updateOffer")
+    public void updateOffer(@RequestBody Offer offer) {
+        iService.updateOffer(offer);
+    }
+
 }

@@ -62,6 +62,24 @@ public class ServiceImpl implements IService {
         offerRepo.save(offer);
     }
 
+    @Override
+    public void deleteOffer(Long id) {
+        offerRepo.deleteById(id);
+    }
+
+    @Override
+    public void updateOffer(Offer offer) {
+        offerRepo.save(offer);
+    }
+
+
+    @Override
+    public Set<Offer> getAllOffers() {
+        if (offerRepo.findAll().size() > 0) {
+            return new HashSet<Offer>(offerRepo.findAll());
+        }
+        return null;
+    }
 
 
 }

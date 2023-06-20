@@ -22,4 +22,10 @@ public interface IService {
 
     void addOffer(Offer offer);
 
+    void deleteOffer(Long id);
+
+    void updateOffer(Offer offer);
+
+    Set<Offer> getAllOffers();
+
 }
