@@ -3,9 +3,12 @@ package tn.esprit.estatemarket.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 import tn.esprit.estatemarket.repository.FeedbackRepo;
 import tn.esprit.estatemarket.repository.UserRepo;
+import tn.esprit.estatemarket.repository.OfferRepo;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class ServiceImpl implements IService {
     private UserRepo userRepo;
-
+    private OfferRepo offerRepo;
     private FeedbackRepo feedbackRepo;
 
     @Override
@@ -53,6 +56,12 @@ public class ServiceImpl implements IService {
         }
         return null;
     }
+
+    @Override
+    public void addOffer(Offer offer) {
+        offerRepo.save(offer);
+    }
+
 
 
 }

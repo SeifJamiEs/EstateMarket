@@ -1,6 +1,7 @@
 package tn.esprit.estatemarket.services;
 
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 
 import java.util.Set;
@@ -18,4 +19,7 @@ public interface IService {
     Set<Feedback> getAllFeedbacks();
 
     Set<Feedback> getAllFeedbacksByUser(Long id);
+
+    void addOffer(Offer offer);
+
 }

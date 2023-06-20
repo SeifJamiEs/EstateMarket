@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 import tn.esprit.estatemarket.services.IService;
 
@@ -44,6 +45,11 @@ public class RestController {
     @PostMapping("/updateFeedback")
     public void updateFeedback(@RequestBody Feedback feedback) {
         iService.updateFeedback(feedback);
+    }
+
+    @PostMapping("/addOffer")
+    public void addOffer(@RequestBody Offer offer) {
+        iService.addOffer(offer);
     }
 
 }
