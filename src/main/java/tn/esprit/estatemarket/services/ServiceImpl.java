@@ -3,6 +3,7 @@ package tn.esprit.estatemarket.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Role;
 import tn.esprit.estatemarket.entities.User;
 import tn.esprit.estatemarket.repository.FeedbackRepo;
 import tn.esprit.estatemarket.repository.UserRepo;
@@ -20,6 +21,16 @@ public class ServiceImpl implements IService {
     @Override
     public void addUser(User user) {
         userRepo.save(user);
+    }
+
+    @Override
+    public void deleteUser(User user) {
+
+    }
+
+    @Override
+    public void updateUser(User user) {
+
     }
 
     @Override
@@ -52,6 +63,36 @@ public class ServiceImpl implements IService {
             return new HashSet<Feedback>(feedbackRepo.findAllByUser(userRepo.findById(id).get()));
         }
         return null;
+    }
+
+    @Override
+    public void addProfile(User user) {
+
+    }
+
+    @Override
+    public void deleteProfile(Long id) {
+
+    }
+
+    @Override
+    public void updateProfile(User user) {
+
+    }
+
+    @Override
+    public void addRole(Role role) {
+
+    }
+
+    @Override
+    public void deleteRole(Long id) {
+
+    }
+
+    @Override
+    public void updateRole(Role role) {
+
     }
 
 
