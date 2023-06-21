@@ -68,7 +68,7 @@ public class RestController {
     @PostMapping("/updateComplaint")
     public void updateComplaint(@RequestBody Complaint complaint) {
         iService.updateComplaint(complaint);
-
+    }
     @PostMapping("/addOffer")
     public void addOffer(@RequestBody Offer offer) {
         iService.addOffer(offer);
