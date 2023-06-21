@@ -3,9 +3,12 @@ package tn.esprit.estatemarket.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 import tn.esprit.estatemarket.repository.FeedbackRepo;
 import tn.esprit.estatemarket.repository.UserRepo;
+import tn.esprit.estatemarket.repository.OfferRepo;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class ServiceImpl implements IService {
     private UserRepo userRepo;
-
+    private OfferRepo offerRepo;
     private FeedbackRepo feedbackRepo;
 
     @Override
@@ -50,6 +53,30 @@ public class ServiceImpl implements IService {
     public Set<Feedback> getAllFeedbacksByUser(Long id) {
         if (feedbackRepo.findAllByUser(userRepo.findById(id).get()).size() > 0) {
             return new HashSet<Feedback>(feedbackRepo.findAllByUser(userRepo.findById(id).get()));
+        }
+        return null;
+    }
+
+    @Override
+    public void addOffer(Offer offer) {
+        offerRepo.save(offer);
+    }
+
+    @Override
+    public void deleteOffer(Long id) {
+        offerRepo.deleteById(id);
+    }
+
+    @Override
+    public void updateOffer(Offer offer) {
+        offerRepo.save(offer);
+    }
+
+
+    @Override
+    public Set<Offer> getAllOffers() {
+        if (offerRepo.findAll().size() > 0) {
+            return new HashSet<Offer>(offerRepo.findAll());
         }
         return null;
     }
