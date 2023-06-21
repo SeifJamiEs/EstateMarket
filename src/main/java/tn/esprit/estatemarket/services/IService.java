@@ -2,6 +2,7 @@ package tn.esprit.estatemarket.services;
 
 import tn.esprit.estatemarket.entities.Complaint;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 
 import java.util.Set;
@@ -28,5 +29,13 @@ public interface IService {
     void updateComplaint(Complaint complaint);
 
     Set<Complaint> getAllComplaints();
+
+    void addOffer(Offer offer);
+
+    void deleteOffer(Long id);
+
+    void updateOffer(Offer offer);
+
+    Set<Offer> getAllOffers();
 
 }

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import tn.esprit.estatemarket.entities.Feedback;
+import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
 import tn.esprit.estatemarket.services.IService;
 import tn.esprit.estatemarket.entities.Complaint;
@@ -47,6 +48,7 @@ public class RestController {
         iService.updateFeedback(feedback);
     }
 
+
     @PostMapping("/addComplaint")
     public void ajouterComplaint(@RequestBody Complaint complaint) {
         iService.addComplaint(complaint);
@@ -66,6 +68,25 @@ public class RestController {
     @PostMapping("/updateComplaint")
     public void updateComplaint(@RequestBody Complaint complaint) {
         iService.updateComplaint(complaint);
+
+    @PostMapping("/addOffer")
+    public void addOffer(@RequestBody Offer offer) {
+        iService.addOffer(offer);
+    }
+
+    @GetMapping("/getAllOffers")
+    public Set<Offer> getAllOffers() {
+        return iService.getAllOffers();
+    }
+
+    @PostMapping("/deleteOffer/{id}")
+    public void deleteOffer(@PathVariable("id") Long id) {
+        iService.deleteOffer(id);
+    }
+
+    @PostMapping("/updateOffer")
+    public void updateOffer(@RequestBody Offer offer) {
+        iService.updateOffer(offer);
     }
 
 }
