@@ -1,10 +1,7 @@
 package tn.esprit.estatemarket.restControllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.estatemarket.entities.Feedback;
 import tn.esprit.estatemarket.entities.Offer;
 import tn.esprit.estatemarket.entities.User;
@@ -79,7 +76,7 @@ public class RestController {
         return iService.getAllOffers();
     }
 
-    @PostMapping("/deleteOffer/{id}")
+    @DeleteMapping("/deleteOffer/{id}")
     public void deleteOffer(@PathVariable("id") Long id) {
         iService.deleteOffer(id);
     }
@@ -88,5 +85,4 @@ public class RestController {
     public void updateOffer(@RequestBody Offer offer) {
         iService.updateOffer(offer);
     }
-
 }
