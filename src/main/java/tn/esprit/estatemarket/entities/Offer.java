@@ -20,6 +20,11 @@ public class Offer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+    private String name;
+    private String location;
+    private String category;
+    private String price;
+    private String type;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
