@@ -12,6 +12,7 @@ import tn.esprit.estatemarket.repository.MessageRepo;
 import tn.esprit.estatemarket.repository.UserRepo;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -88,8 +89,10 @@ public class ServiceImpl implements IService {
 
     @Override
     public Set<ChatGroup> getAllChatsByUser(Long id) {
-        if (chatGroupRepo.findAllByUser(userRepo.findById(id).get()).size() > 0) {
-            return new HashSet<ChatGroup>(chatGroupRepo.findAllByUser(userRepo.findById(id).get()));
+        Optional<User> userOptional = userRepo.findById(id);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            return chatGroupRepo.findAllByUsersContaining(user);
         }
         return null;
     }

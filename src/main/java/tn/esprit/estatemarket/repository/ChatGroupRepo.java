@@ -7,6 +7,5 @@ import tn.esprit.estatemarket.entities.User;
 import java.util.Set;
 
 public interface ChatGroupRepo extends JpaRepository<ChatGroup, Long> {
-    Set<ChatGroup> findAllByUser(User user);
-
+    Set<ChatGroup> findAllByUsersContaining(User user);
 }
