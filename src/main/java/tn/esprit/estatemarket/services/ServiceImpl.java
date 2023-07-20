@@ -34,6 +34,11 @@ public class ServiceImpl implements IService {
     }
 
     @Override
+    public Set<User> getAllUser() {
+        return null;
+    }
+
+    @Override
     public void addFeedback(Feedback feedback) {
         feedbackRepo.save(feedback);
     }
@@ -66,6 +71,16 @@ public class ServiceImpl implements IService {
     }
 
     @Override
+    public Set<User> getAllProfile() {
+        return null;
+    }
+
+    @Override
+    public Set<User> getProfileByUser(Long id) {
+        return null;
+    }
+
+    @Override
     public void addProfile(User user) {
 
     }
@@ -93,6 +108,16 @@ public class ServiceImpl implements IService {
     @Override
     public void updateRole(Role role) {
 
+    }
+
+    @Override
+    public Set<Role> getAllRole() {
+        return null;
+    }
+
+    @Override
+    public Set<Role> getAllRoleByUser(Long id) {
+        return null;
     }
 
 

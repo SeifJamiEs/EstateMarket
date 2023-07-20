@@ -38,12 +38,26 @@ public class RestController {
     public Set<Feedback> getAllFeedbacks() {
         return iService.getAllFeedbacks();
     }
-
+    @GetMapping("/getAllProfile")
+    public Set<User> getAllProfile() {
+        return iService.getAllProfile();
+    }
+    @GetMapping("/getAllRole")
+    public Set<Role> getAllRole() {
+        return iService.getAllRole();
+    }
     @GetMapping("/getAllFeedbacksByUserId/{id}")
     public Set<Feedback> getAllFeedbacksByUser(@PathVariable("id") Long id) {
         return iService.getAllFeedbacksByUser(id);
     }
-
+    @GetMapping("/getProfileByUserId/{id}")
+    public Set<User> getProfileByUser(@PathVariable("id") Long id) {
+        return iService.getProfileByUser(id);
+    }
+    @GetMapping("/getAllRoleByUserId/{id}")
+    public Set<Role> getAllRoleByUser(@PathVariable("id") Long id) {
+        return iService.getAllRoleByUser(id);
+    }
     @PostMapping("/deleteFeedback/{id}")
     public void deleteFeedback(@PathVariable("id") Long id) {
         iService.deleteFeedback(id);
@@ -77,4 +91,4 @@ public class RestController {
         iService.updateUser(user);
     }
 }
-}
+

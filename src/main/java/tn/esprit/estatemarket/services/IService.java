@@ -10,6 +10,8 @@ public interface IService {
     void addUser(User user);
     void deleteUser(User user);
     void updateUser(User user);
+    Set<User> getAllUser();
+
     void addFeedback(Feedback feedback);
 
 
@@ -18,8 +20,9 @@ public interface IService {
     void updateFeedback(Feedback feedback);
 
     Set<Feedback> getAllFeedbacks();
-
     Set<Feedback> getAllFeedbacksByUser(Long id);
+    Set<User> getAllProfile();
+    Set<User> getProfileByUser(Long id);
 
     void addProfile(User user);
     void deleteProfile(Long id);
@@ -28,5 +31,6 @@ public interface IService {
     void addRole(Role role);
     void deleteRole(Long id);
     void updateRole(Role role);
-
+    Set<Role> getAllRole();
+    Set<Role> getAllRoleByUser(Long id);
 }
